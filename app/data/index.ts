@@ -1,3 +1,13 @@
+import { ImageSourcePropType } from "react-native";
+
+import {
+  Shrine_Alphi,
+  Shrine_Lmb,
+  Shrine_Logo6,
+  Shrine_Mal,
+  Shrine_Squiggle,
+} from "../components/Shrine_SVG";
+
 export enum Vendor {
   Alphi = "Alphi",
   Lmbrjk = "Lmbrjk",
@@ -19,22 +29,22 @@ export interface ItemData {
   price: number;
   vendor: Vendor;
   category: Category;
-  photoResId: string;
+  photo: ImageSourcePropType;
   isPhotoPortrait?: boolean;
 }
 
-export function getVendorResId(vendor: Vendor): string {
+export function getVendorRes(vendor: Vendor): () => JSX.Element {
   switch (vendor) {
     case Vendor.Alphi:
-      return "logo_alphi";
+      return Shrine_Alphi;
     case Vendor.Lmbrjk:
-      return "logo_lmb";
+      return Shrine_Lmb;
     case Vendor.Mal:
-      return "logo_mal";
+      return Shrine_Mal;
     case Vendor.Six:
-      return "logo_6";
+      return Shrine_Logo6;
     default:
-      return "logo_squiggle";
+      return Shrine_Squiggle;
   }
 }
 
@@ -45,7 +55,7 @@ export const SampleItems: ItemData[] = [
     price: 120,
     vendor: Vendor.Squiggle,
     category: Category.Accessories,
-    photoResId: "photo_0",
+    photo: require("../assets/images/photo_0.jpg"),
   },
   {
     id: 1,
@@ -53,7 +63,7 @@ export const SampleItems: ItemData[] = [
     price: 58,
     vendor: Vendor.Mal,
     category: Category.Accessories,
-    photoResId: "photo_1",
+    photo: require("../assets/images/photo_1.jpg"),
   },
   {
     id: 2,
@@ -61,7 +71,7 @@ export const SampleItems: ItemData[] = [
     price: 35,
     vendor: Vendor.Lmbrjk,
     category: Category.Accessories,
-    photoResId: "photo_2",
+    photo: require("../assets/images/photo_2.jpg"),
   },
   {
     id: 3,
@@ -69,7 +79,7 @@ export const SampleItems: ItemData[] = [
     price: 98,
     vendor: Vendor.Alphi,
     category: Category.Accessories,
-    photoResId: "photo_3",
+    photo: require("../assets/images/photo_3.jpg"),
   },
   {
     id: 4,
@@ -77,7 +87,7 @@ export const SampleItems: ItemData[] = [
     price: 34,
     vendor: Vendor.Six,
     category: Category.Accessories,
-    photoResId: "photo_4",
+    photo: require("../assets/images/photo_4.jpg"),
   },
   {
     id: 5,
@@ -85,7 +95,7 @@ export const SampleItems: ItemData[] = [
     price: 12,
     vendor: Vendor.Lmbrjk,
     category: Category.Accessories,
-    photoResId: "photo_5",
+    photo: require("../assets/images/photo_5.jpg"),
   },
   {
     id: 6,
@@ -93,7 +103,7 @@ export const SampleItems: ItemData[] = [
     price: 16,
     vendor: Vendor.Six,
     category: Category.Accessories,
-    photoResId: "photo_6",
+    photo: require("../assets/images/photo_6.jpg"),
   },
   {
     id: 7,
@@ -101,7 +111,7 @@ export const SampleItems: ItemData[] = [
     price: 40,
     vendor: Vendor.Six,
     category: Category.Accessories,
-    photoResId: "photo_7",
+    photo: require("../assets/images/photo_7.jpg"),
   },
   {
     id: 8,
@@ -109,7 +119,7 @@ export const SampleItems: ItemData[] = [
     price: 198,
     vendor: Vendor.Squiggle,
     category: Category.Accessories,
-    photoResId: "photo_8",
+    photo: require("../assets/images/photo_8.jpg"),
   },
   {
     id: 9,
@@ -117,7 +127,7 @@ export const SampleItems: ItemData[] = [
     price: 58,
     vendor: Vendor.Alphi,
     category: Category.Home,
-    photoResId: "photo_9",
+    photo: require("../assets/images/photo_9.jpg"),
   },
   {
     id: 10,
@@ -125,7 +135,7 @@ export const SampleItems: ItemData[] = [
     price: 18,
     vendor: Vendor.Alphi,
     category: Category.Home,
-    photoResId: "photo_10",
+    photo: require("../assets/images/photo_10.jpg"),
   },
   {
     id: 11,
@@ -133,7 +143,7 @@ export const SampleItems: ItemData[] = [
     price: 28,
     vendor: Vendor.Mal,
     category: Category.Home,
-    photoResId: "photo_11",
+    photo: require("../assets/images/photo_11.jpg"),
   },
   {
     id: 12,
@@ -141,7 +151,7 @@ export const SampleItems: ItemData[] = [
     price: 34,
     vendor: Vendor.Six,
     category: Category.Home,
-    photoResId: "photo_12",
+    photo: require("../assets/images/photo_12.jpg"),
   },
   {
     id: 13,
@@ -149,7 +159,7 @@ export const SampleItems: ItemData[] = [
     price: 18,
     vendor: Vendor.Mal,
     category: Category.Home,
-    photoResId: "photo_13",
+    photo: require("../assets/images/photo_13.jpg"),
   },
   {
     id: 14,
@@ -157,7 +167,7 @@ export const SampleItems: ItemData[] = [
     price: 27,
     vendor: Vendor.Six,
     category: Category.Home,
-    photoResId: "photo_14",
+    photo: require("../assets/images/photo_14.jpg"),
   },
   {
     id: 15,
@@ -165,7 +175,7 @@ export const SampleItems: ItemData[] = [
     price: 16,
     vendor: Vendor.Six,
     category: Category.Home,
-    photoResId: "photo_15",
+    photo: require("../assets/images/photo_15.jpg"),
   },
   {
     id: 16,
@@ -173,7 +183,7 @@ export const SampleItems: ItemData[] = [
     price: 16,
     vendor: Vendor.Alphi,
     category: Category.Home,
-    photoResId: "photo_16",
+    photo: require("../assets/images/photo_16.jpg"),
   },
   {
     id: 17,
@@ -181,7 +191,7 @@ export const SampleItems: ItemData[] = [
     price: 175,
     vendor: Vendor.Squiggle,
     category: Category.Home,
-    photoResId: "photo_17",
+    photo: require("../assets/images/photo_17.jpg"),
   },
   {
     id: 18,
@@ -189,7 +199,7 @@ export const SampleItems: ItemData[] = [
     price: 129,
     vendor: Vendor.Alphi,
     category: Category.Home,
-    photoResId: "photo_18",
+    photo: require("../assets/images/photo_18.jpg"),
   },
   {
     id: 19,
@@ -197,7 +207,7 @@ export const SampleItems: ItemData[] = [
     price: 48,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_19",
+    photo: require("../assets/images/photo_19.jpg"),
   },
   {
     id: 20,
@@ -205,7 +215,7 @@ export const SampleItems: ItemData[] = [
     price: 45,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_20",
+    photo: require("../assets/images/photo_20.jpg"),
   },
   {
     id: 21,
@@ -213,7 +223,7 @@ export const SampleItems: ItemData[] = [
     price: 38,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_21",
+    photo: require("../assets/images/photo_21.jpg"),
     isPhotoPortrait: true,
   },
   {
@@ -222,7 +232,7 @@ export const SampleItems: ItemData[] = [
     price: 70,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_22",
+    photo: require("../assets/images/photo_22.jpg"),
     isPhotoPortrait: true,
   },
   {
@@ -231,7 +241,7 @@ export const SampleItems: ItemData[] = [
     price: 70,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_23",
+    photo: require("../assets/images/photo_23.jpg"),
   },
   {
     id: 24,
@@ -239,7 +249,7 @@ export const SampleItems: ItemData[] = [
     price: 60,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_24",
+    photo: require("../assets/images/photo_24.jpg"),
     isPhotoPortrait: true,
   },
   {
@@ -248,7 +258,7 @@ export const SampleItems: ItemData[] = [
     price: 178,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_25",
+    photo: require("../assets/images/photo_25.jpg"),
   },
   {
     id: 26,
@@ -256,7 +266,7 @@ export const SampleItems: ItemData[] = [
     price: 74,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_26",
+    photo: require("../assets/images/photo_26.jpg"),
     isPhotoPortrait: true,
   },
   {
@@ -265,7 +275,7 @@ export const SampleItems: ItemData[] = [
     price: 38,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_27",
+    photo: require("../assets/images/photo_27.jpg"),
     isPhotoPortrait: true,
   },
   {
@@ -274,7 +284,7 @@ export const SampleItems: ItemData[] = [
     price: 48,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_28",
+    photo: require("../assets/images/photo_28.jpg"),
   },
   {
     id: 29,
@@ -282,7 +292,7 @@ export const SampleItems: ItemData[] = [
     price: 98,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_29",
+    photo: require("../assets/images/photo_29.jpg"),
   },
   {
     id: 30,
@@ -290,7 +300,7 @@ export const SampleItems: ItemData[] = [
     price: 68,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_30",
+    photo: require("../assets/images/photo_30.jpg"),
     isPhotoPortrait: true,
   },
   {
@@ -299,7 +309,7 @@ export const SampleItems: ItemData[] = [
     price: 38,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_31",
+    photo: require("../assets/images/photo_31.jpg"),
   },
   {
     id: 32,
@@ -307,7 +317,7 @@ export const SampleItems: ItemData[] = [
     price: 58,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_32",
+    photo: require("../assets/images/photo_32.jpg"),
     isPhotoPortrait: true,
   },
   {
@@ -316,7 +326,7 @@ export const SampleItems: ItemData[] = [
     price: 42,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_33",
+    photo: require("../assets/images/photo_33.jpg"),
   },
   {
     id: 34,
@@ -324,7 +334,7 @@ export const SampleItems: ItemData[] = [
     price: 27,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_34",
+    photo: require("../assets/images/photo_34.jpg"),
     isPhotoPortrait: true,
   },
   {
@@ -333,7 +343,7 @@ export const SampleItems: ItemData[] = [
     price: 24,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_35",
+    photo: require("../assets/images/photo_35.jpg"),
     isPhotoPortrait: true,
   },
   {
@@ -342,7 +352,7 @@ export const SampleItems: ItemData[] = [
     price: 58,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_36",
+    photo: require("../assets/images/photo_36.jpg"),
     isPhotoPortrait: true,
   },
   {
@@ -351,7 +361,7 @@ export const SampleItems: ItemData[] = [
     price: 58,
     vendor: Vendor.Lmbrjk,
     category: Category.Clothing,
-    photoResId: "photo_37",
+    photo: require("../assets/images/photo_37.jpg"),
     isPhotoPortrait: true,
   },
 ];
